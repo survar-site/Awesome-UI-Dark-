@@ -36,18 +36,18 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gray-50 py-8 sm:py-16 px-4 sm:px-8 relative overflow-hidden">
       
 
         <div className="max-w-6xl mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-start">
                 {/* Left Side - Title */}
             
                 <div className="lg:sticky lg:top-16 relative">
                      {/* background img */}
                      <img src={springImg} alt="Spring background decoration" className="w-full h-auto" />
                      <div className="absolute inset-0 flex items-center justify-center">
-                        <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight text-center">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight text-center px-4">
                         Frequently<br />
                         Asked<br />
                         Questions
@@ -56,24 +56,24 @@ const FAQSection = () => {
                 </div>
             
                 {/* Right Side - FAQ Items */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                    
                     {faqData.map((item, index) => (
-                        <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div key={index} className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                             <button
                             onClick={() => toggleItem(index)}
-                            className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                            className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                             >
-                            <span className="text-lg font-semibold text-gray-900 pr-4">
+                            <span className="text-base sm:text-lg font-semibold text-gray-900 pr-2 sm:pr-4">
                                 {item.question}
                             </span>
                             <div className="flex-shrink-0">
                                 {openItems[index] ? (
-                                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                                 ) : (
-                                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                                 </svg>
                                 )}
@@ -81,8 +81,8 @@ const FAQSection = () => {
                             </button>
                             
                             {openItems[index] && (
-                            <div className="px-6 pb-5">
-                                <div className="text-gray-600 leading-relaxed">
+                            <div className="px-4 sm:px-6 pb-4 sm:pb-5">
+                                <div className="text-sm sm:text-base text-gray-600 leading-relaxed">
                                 {item.answer}
                                 {index === 0 && (
                                     <>
